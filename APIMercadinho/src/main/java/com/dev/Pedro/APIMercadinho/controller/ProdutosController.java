@@ -2,6 +2,7 @@ package com.dev.Pedro.APIMercadinho.controller;
 
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -30,6 +31,12 @@ public class ProdutosController {
 	public ResponseEntity<List<Produtos>> getAllProdutos(){
 		List<Produtos> allProdutos = service.getAllProdutos();
 		return new ResponseEntity<>(allProdutos, HttpStatus.OK);
+	}
+	
+	@GetMapping("/get/{id}")
+	public ResponseEntity<Optional<Produtos>> getAProdutosId(@PathVariable Long id){
+		Optional<Produtos> Produto = service.getProdutosId(id);
+		return ResponseEntity.ok(Produto);
 	}
 	
 	@DeleteMapping("/delete/{id}")
