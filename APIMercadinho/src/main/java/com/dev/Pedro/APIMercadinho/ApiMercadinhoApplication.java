@@ -10,4 +10,6 @@ public class ApiMercadinhoApplication {
 		SpringApplication.run(ApiMercadinhoApplication.class, args);
 	}
 
+	
+
 }

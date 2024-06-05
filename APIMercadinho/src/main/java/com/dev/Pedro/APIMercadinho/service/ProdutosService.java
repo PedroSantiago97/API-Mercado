@@ -1,4 +1,7 @@
 package com.dev.Pedro.APIMercadinho.service;
+import java.util.List;
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +22,16 @@ public class ProdutosService {
 	
 	//Mostrar estoque de produtos
 	
+	public List<Produtos> getAllProdutos(){
+		return repo.findAll();
+	}
 	//Mostrar produtos por ID
+
+	
+	public void deleteProdutos(Long id) {
+		repo.deleteById(id);
+		
+	}
 	
 	//Deletar produto
 	
